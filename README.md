@@ -12,7 +12,7 @@ The main **dashboard** of the Patlix workspace: log in and launch every project 
 ## Run
 
 ```bash
-npx nx serve web        # http://localhost:4200
+npx nx serve patlix-web        # http://localhost:4200
 ```
 
 The dev server proxies `/api` → `http://localhost:3000` (see `proxy.conf.json`).
@@ -44,7 +44,7 @@ src/
 ## Quality
 
 ```bash
-npx nx lint web
-npx nx test web        # heavy (bundles the app) — run alone
-npx nx build web
+npx nx lint patlix-web
+npx nx test patlix-web        # heavy (bundles the app) — run alone
+npx nx build patlix-web
 ```

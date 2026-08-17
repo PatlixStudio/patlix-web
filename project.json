@@ -1,9 +1,9 @@
 {
-  "name": "web",
+  "name": "patlix-web",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "patlix",
-  "sourceRoot": "apps/web/src",
+  "sourceRoot": "apps/patlix-web/src",
   "tags": ["scope:web"],
   "targets": {
     "build": {
@@ -11,17 +11,17 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/web",
-        "browser": "apps/web/src/main.ts",
-        "tsConfig": "apps/web/tsconfig.app.json",
+        "outputPath": "dist/apps/patlix-web",
+        "browser": "apps/patlix-web/src/main.ts",
+        "tsConfig": "apps/patlix-web/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/web/public"
+            "input": "apps/patlix-web/public"
           }
         ],
-        "styles": ["apps/web/src/styles.scss"]
+        "styles": ["apps/patlix-web/src/styles.scss"]
       },
       "configurations": {
         "production": {
@@ -52,14 +52,14 @@
       "defaultConfiguration": "development",
       "options": {
         "port": 4200,
-        "proxyConfig": "apps/web/proxy.conf.json"
+        "proxyConfig": "apps/patlix-web/proxy.conf.json"
       },
       "configurations": {
         "production": {
-          "buildTarget": "web:build:production"
+          "buildTarget": "patlix-web:build:production"
         },
         "development": {
-          "buildTarget": "web:build:development"
+          "buildTarget": "patlix-web:build:development"
         }
       }
     },
@@ -76,9 +76,9 @@
       "continuous": true,
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "web:build",
+        "buildTarget": "patlix-web:build",
         "port": 4200,
-        "staticFilePath": "dist/apps/web/browser",
+        "staticFilePath": "dist/apps/patlix-web/browser",
         "spa": true
       }
     }
